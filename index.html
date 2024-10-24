@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="uk">
+   <head>
+      <meta charset="utf-8">
+      <title>JQuery and plug-ins</title>
+      <link href="css/plugin.css" rel="stylesheet">
+      <link href="css/jquery-ui.css" rel="stylesheet">
+      <link href="css/custom.css" rel="stylesheet">
+      <style>
+         .mfp-fade.mfp-bg {
+         opacity: 0;
+         -webkit-transition: all 0.15s ease-out; 
+         -moz-transition: all 0.15s ease-out; 
+         transition: all 0.15s ease-out;
+         }
+         .mfp-fade.mfp-bg.mfp-ready {
+         opacity: 0.8;
+         }
+         .mfp-fade.mfp-bg.mfp-removing {
+         opacity: 0;
+         }
+         .mfp-fade.mfp-wrap .mfp-content {
+         opacity: 0;
+         -webkit-transition: all 0.15s ease-out; 
+         -moz-transition: all 0.15s ease-out; 
+         transition: all 0.15s ease-out;
+         }
+         .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+         opacity: 1;
+         }
+         .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+         opacity: 0;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <!--Magnific Popup-->
+         <h1>Magnific Popup Map</h1>
+         <a class="popup-gmaps" href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20487.566332586783!2d24.044609239031548!3d49.83467917675628!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add4323617cad%3A0x4755c40a1eef2f6d!2sOkeanarium%20Lviv!5e0!3m2!1sru!2sua!4v1728513991054!5m2!1sru!2sua">Open Google Map</a>
+         <div class="gallery-container">
+            <h1>Magnific Popup Gallery</h1>
+            <div class="popup-gallery">
+               <a href="images/zifferblat.jpg" title="Циферблат"><img src="images/zifferblat.jpg" height="100" alt="Циферблат"></a>
+               <a href="images/thesmiths.jfif" title="The Smiths"><img src="images/thesmiths.jfif" height="100" alt="The Smiths"></a>
+               <a href="images/saysmthbad.jpg" title="Скажи щось погане"><img src="images/saysmthbad.jpg" height="100" alt="Скажи щось погане"></a>
+               <a href="images/radiohead.jfif" title="Radiohead"><img src="images/radiohead.jfif" height="100" alt="Radiohead"></a>
+               <a href="images/queen.jfif" title="Queen"><img src="images/queen.jfif" height="100" alt="Queen"></a>
+               <a href="images/mistmorn.jpg" title="Містморн"><img src="images/mistmorn.jpg" height="100" alt="Містморн"></a>
+               <a href="images/lana.jfif" title="Lana Del Rey"><img src="images/lana.jfif" height="100" alt="Lana Del Rey"></a>
+               <a href="images/deftones.jfif" title="Deftones"><img src="images/deftones.jfif" height="100" alt="Deftones"></a>
+               <a href="images/skryabin.jpg" title="Скрябін"><img src="images/skryabin.jpg" height="100" alt="Скрябін"></a>
+               <a href="images/nirvana.jpg" title="Nirvana"><img src="images/nirvana.jpg" height="100" alt="Nirvana"></a>
+            </div>
+         </div>
+         <!--Unite Gallery-->
+         <h1>Unite Gallery Video Slider</h1>
+         <div id="gallery-video">
+            <div data-type="youtube" data-videoid="EQZzE6eet9Y" data-title="Скажи щось погане" data-description="Bad son(g)"></div>
+            <div data-type="youtube" data-videoid="fJ9rUzIMcZQ" data-title="Queen" data-description="Bohemian Rhapsody"></div>
+            <div data-type="youtube" data-videoid="G54ql60rXd0" data-title="Скрябін" data-description="Кольорова"></div>
+            <div data-type="youtube" data-videoid="dmMefESqteg" data-title="Циферблат" data-description="Place I Call Home"></div>
+            <div data-type="youtube" data-videoid="aMUVF9MOuNo" data-title="Mistmorn" data-description="Панельні будівлі"></div>
+            <div data-type="youtube" data-videoid="TdrL3QxjyVw" data-title="Lana Del Rey" data-description="Summertime Sadness"></div>
+            <div data-type="youtube" data-videoid="hTWKbfoikeg" data-title="Nirvana" data-description="Smells Like Teen Spirit"></div>
+            <div data-type="youtube" data-videoid="u5CVsCnxyXg" data-title="Radiohead" data-description="No Surprises"></div>
+            <div data-type="youtube" data-videoid="KvknOXGPzCQ" data-title="Deftones" data-description="Be Quiet And Drive (Far Away)"></div>
+            <div data-type="youtube" data-videoid="QQRjvjXzLVs" data-title="The Smiths" data-description="Golden Lights"></div>
+         </div>
+         <h1>Unite Gallery Tiles Nested</h1>
+         <div id="gallery-nested" style="display:none;">
+            <img alt="Deftones" src="images/deftones.jfif"
+               data-image="images/deftones.jfif">
+            <img alt="Lana Del Rey" src="images/lana.jfif"
+               data-image="images/lana.jfif">
+            <img alt="Mistmorn" src="images/mistmorn.jpg"
+               data-image="images/mistmorn.jpg">
+            <img alt="Image 4 Title" src="images/nirvana.jpg"
+               data-image="images/nirvana.jpg">	
+            <img alt="Queen" src="images/queen.jfif"
+               data-image="images/queen.jfif">
+            <img alt="Radiohead" src="images/radiohead.jfif"
+               data-image="images/radiohead.jfif">	
+            <img alt="Скажи щось погане" src="images/saysmthbad.jpg"
+               data-image="images/saysmthbad.jpg">
+            <img alt="Скрябін" src="images/skryabin.jpg"
+               data-image="images/skryabin.jpg">
+            <img alt="The Smiths" src="images/thesmiths.jfif"
+               data-image="images/thesmiths.jfif">
+            <img alt="Циферблат" src="images/zifferblat.jpg"
+               data-image="images/zifferblat.jpg">						
+         </div>
+         <!--./galleryTiles-->		
+         <h1>Unite Gallery Default</h1>
+         <div id="gallery" style="display:none;">
+            <img alt="Lana Del Rey" src="images/lana.jfif"
+               data-image="images/lana.jfif">
+            <img alt="Deftones" src="images/deftones.jfif"
+               data-image="images/deftones.jfif">
+            <img alt="Mistmorn" src="images/mistmorn.jpg"
+               data-image="images/mistmorn.jpg">
+            <img alt="Image 4 Title" src="images/nirvana.jpg"
+               data-image="images/nirvana.jpg">	
+            <img alt="Queen" src="images/queen.jfif"
+               data-image="images/queen.jfif">
+            <img alt="Radiohead" src="images/radiohead.jfif"
+               data-image="images/radiohead.jfif">	
+            <img alt="Скажи щось погане" src="images/saysmthbad.jpg"
+               data-image="images/saysmthbad.jpg">
+            <img alt="Скрябін" src="images/skryabin.jpg"
+               data-image="images/skryabin.jpg">
+            <img alt="The Smiths" src="images/thesmiths.jfif"
+               data-image="images/thesmiths.jfif">
+            <img alt="Циферблат" src="images/zifferblat.jpg"
+               data-image="images/zifferblat.jpg">							
+         </div>
+         <!--./galleryTiles-->
+         <!--Owl Carousel-->
+         <h1>Owl Carousel</h1>
+         <div class="owl-carousel owl-theme">
+            <div class="item"><img src="images/zifferblat.jpg" alt="Циферблат"></div>
+            <div class="item"><img src="images/thesmiths.jfif" alt="The Smiths"></div>
+            <div class="item"><img src="images/skryabin.jpg" alt="Скрябін"></div>
+            <div class="item"><img src="images/saysmthbad.jpg" alt="Скажи щось погане"></div>
+            <div class="item"><img src="images/radiohead.jfif" alt="Radiohead"></div>
+            <div class="item"><img src="images/queen.jfif" alt="Queen"></div>
+            <div class="item"><img src="images/nirvana.jpg" alt="Nirvana"></div>
+            <div class="item"><img src="images/mistmorn.jpg" alt="Містморн"></div>
+            <div class="item"><img src="images/lana.jfif" alt="Lana Del Rey"></div>
+            <div class="item"><img src="images/deftones.jfif" alt="Deftones"></div>
+         </div>
+         <h1>Accordion</h1>
+         <div id="accordion">
+            <h3>Рок</h3>
+            <div>
+               <p>
+                  Рок — це стиль музики, характерним для якого є використання електромузичних інструментів. 
+                  Його назва походить від англійського слова “rock”, що переводиться, як “качати”, “укачувати”, 
+                  що також характерно для рока. Похідним жанром для цього стилю є рок-н-рол. 
+                  Раніше він вважався музикою чорношкірих, поки популярності в ньому не отримав Майкл Джексон. 
+                  Саме тоді рок-н-рол став привертати до себе увагу. Найвідомішими виконавцями є Чак Беррі, 
+                  Літл Річард, група “Бітлз”. З часом все більше виконавців видозмінювали свою музику, 
+                  додавали свої фішки і називали це іншим стилем. 
+               </p>
+            </div>
+            <h3>Постпанк</h3>
+            <div>
+               <p>
+                  Постпанк – унікальне явище, що суттєво змінило музику наприкінці 1970-х років.
+                  Це насамперед про настрій та атмосферу, а не про ритмічний малюнок чи конкретні 
+                  гітарні рифи. Навіть традиційно асоційовані з жанром гурти часто записували 
+                  один-два видатних постпанкових альбоми та вирушали далі на пошуки нового стилю. 
+                  З цього витікає й парадоксальний висновок деяких дослідників – вони стверджують, 
+                  що постпанк з’явився навіть раніше за панк, але ретроспективно був записаний 
+                  журналістами останньому чи в сини, чи в молодші брати.
+               </p>
+            </div>
+            <h3>Хеві метал</h3>
+            <div>
+               <p>
+                  Важки́й мета́л — стиль рок-музики, якому притаманні агресивні, драйвові рифи та підсилені гітари з дисторшном. 
+                  Важкий метал став продуктом розвиткублюзу, блюз-року, року і прогресивного року. Його основою стала 
+                  музика хард-рокових виконавців, які в період з 1967 до 1974 років на основі блюзу і року створили 
+                  нове важке звучання, сконцентроване на гітарах і ударних. Пізніше з’явилося чимало піджанрів хеві-металу, 
+                  більшість з яких називають просто «метал». Як наслідок, поняття «важкий метал» має два значення: 
+                  власне жанр з усіма піджанрами, або ж стиль перших хеві-металевих груп 1970-х, який ще іноді називають «традиційний метал».
+               </p>
+            </div>
+            <h3>Лофі</h3>
+            <div>
+               <p>
+                  Фонова музика Lofi — чудовий вибір для створення розслаблюючої та холодної атмосфери. 
+                  Завдяки своєму м’якому та невимушеному звучанню музика лофі може допомогти зменшити стрес і 
+                  сприяти відчуттю спокою. Від гладкого джазу до хіп-хопу, фонова музика лофі може створити затишне 
+                  й заспокійливе середовище для навчання, роботи чи просто відпочинку. 
+                  Знайдіть найкращу фонову музику лофі для свого проекту чи особистого користування та насолоджуйтеся розслабленням, яке воно приносить!
+               </p>
+            </div>
+         </div>
+         <!--./Accordion-->
+         <!--Draggable-->
+         <h1>Draggable</h1>
+         <div id="draggable" class="ui-widget-content">
+            <img src="images/cat.png" alt="Description" style="width:200px; height:auto;">
+         </div>
+         <!--./Draggable-->
+      </div>
+      <!--SCRIPTS-->
+      <script src="js/jquery.js"></script>
+      <!-- Magnific Popup-->
+      <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+      <script src="magnific-popup/jquery.magnific-popup.js"></script>	
+      <script>
+         $(document).ready(function() {
+         	$('.popup-gallery').magnificPopup({
+         		delegate: 'a',
+         		type: 'image',
+         		tLoading: 'Loading image #%curr%...',
+         		mainClass: 'mfp-img-mobile',
+         		gallery: {
+         			enabled: true,
+         			navigateByImgClick: true,
+         			preload: [0,1] 
+         		},
+         		image: {
+         			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+         		}
+         	});
+         });
+      </script>	
+      <script>
+         $(document).ready(function() {
+         	$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+         		disableOn: 700,
+         		type: 'iframe',
+         		mainClass: 'mfp-fade',
+         		removalDelay: 160,
+         		preloader: false,
+         
+         		fixedContentPos: false
+         	});
+         });
+      </script>
+      <!--Unite Gallery-->
+      <script src="unitegallery/js/unitegallery.min.js"></script>
+      <link rel="stylesheet" href="unitegallery/css/unite-gallery.css" />
+      <script src="unitegallery/themes/default/ug-theme-default.js"></script> 
+      <link rel="stylesheet" href="unitegallery/themes/default/ug-theme-default.css" />
+      <script>
+         jQuery(document).ready(function(){
+             jQuery("#gallery").unitegallery({
+                 gallery_theme: "default",         
+                 gallery_width: "100%",            
+                 tile_width: 250,                  
+                 tile_height: 400,                 
+                 tile_enable_image_effect: false,  
+                 tile_image_position: "inside",    
+                 tile_enable_border: true,        
+             });
+         });
+      </script>
+      <script src="unitegallery/themes/tiles/ug-theme-tiles.js"></script>
+      <script>
+         jQuery(document).ready(function(){
+            jQuery("#gallery-nested").unitegallery({
+                gallery_theme: "tiles",
+                tiles_type: "nested",
+                tiles_space_between_cols: 10,
+                tile_enable_border: true,
+                tile_border_width: 3,
+                tile_border_color: "#ffffff",
+                tile_border_radius: 10,
+                tile_enable_textpanel: true,
+                tile_textpanel_always_on: true,
+                tile_textpanel_appear_type: "slide",  
+                tile_textpanel_bg_opacity: 0.4,
+                tile_textpanel_bg_color: "#ff0000",
+                gallery_enable_arrows: true,  
+                gallery_enable_close_button: true,  
+                tile_enable_action: true,  
+            });
+         });
+      </script>	
+      <script src='unitegallery/themes/video/ug-theme-video.js'></script>
+      <link  href='unitegallery/themes/video/skin-right-no-thumb.css' rel='stylesheet' />
+      <link  href='unitegallery/themes/video/skin-right-thumb.css' rel='stylesheet' />
+      <link  href='unitegallery/themes/video/skin-right-title-only.css' rel='stylesheet' />
+      <script>
+         jQuery("#gallery-video").unitegallery({
+         	gallery_theme: "video"
+         });	
+      </script>	
+      <script>
+         $(document).ready(function(){
+         	$("#gallery").unitegallery({
+         		gallery_theme: "tilesnested",
+         		tiles_type: "nested",
+         		theme_enable_navigation: true,
+         		slider_enable_arrows: true,
+         		slider_arrow_left_align: 30,
+         		slider_arrow_right_align: 30,
+         		slider_arrow_color: "gray"
+         	});
+         });
+      </script>
+      <!--Owl Carousel-->
+      <link rel="stylesheet" href="owlcarousel/owl.carousel.css">
+      <link rel="stylesheet" href="owlcarousel/owl.theme.default.css">
+      <script src="owlcarousel/owl.carousel.js"></script>
+      <script>
+         $('.owl-carousel').owlCarousel({
+         	loop:true,
+         	autoWidth:true,
+         	autoplay:true,
+         	autoplayTimeout:1000,
+         	autoplayHoverPause:true,
+         	margin:10,
+         	nav:false,
+         	responsive:{
+         		0:{
+         			items:1
+         		},
+         		600:{
+         			items:3
+         		},
+         		1000:{
+         			items:5
+         		}
+         	}
+         })
+      </script>	
+      <!--jQueryUI-->	
+      <script src="js/jquery-ui.js"></script>	
+      <script>
+         $( function() {
+         	$( "#draggable" ).draggable();
+         } );
+      </script>	
+      <script>
+         $( function() {
+         	$( "#accordion" ).accordion({
+         		collapsible: true 
+         	});
+         } );
+      </script>
+   </body>
+</html>
